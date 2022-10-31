@@ -1,27 +1,12 @@
 const User = require("./src/model/User")
-const Cars = require("./src/model/Cars")
 const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken")
-const multer = require("multer")
-const fs = require("fs")
-const Image = require("./src/model/ImgSchema")
+
 const {
   registerValidation,
   loginValidation,
   carValidation,
 } = require("./src/controllers/validation")
-
-//Image config
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, "./src/uploads")
-  },
-  filename: (req, file, cb) => {
-    cb(null, file.originalname)
-  },
-})
-
-const upload = multer({ storage: storage })
 
 //Registering User
 const register = async (req, res) => {
@@ -80,43 +65,5 @@ const login = async (req, res) => {
     res.send("Logged In!")
   }
 }
-//Posting Cars
-const postCar = async (req, res) => {
-  //Validating data
-  const { error } = carValidation(req.body)
-  if (error) return res.status(400).send(error.details[0].message)
 
-  const car = new Cars({
-    name: req.body.name,
-    brand: req.body.brand,
-    model: req.body.model,
-    price: req.body.price,
-  })
-  try {
-    car.save()
-    res.send({ car: car._id })
-  } catch (err) {
-    res.status(400).send(err)
-  }
-}
-//Posting Images
-const postImg = async (req, res) => {
-  //Image post
-  const saveImg = new Image({
-    name: req.body.name,
-    img: {
-      data: fs.readFileSync("./src/uploads/" + req.file.filename),
-      contentType: "image/png",
-    },
-  })
-  //Assigning token to image post
-  const token = jwt.sign({ _id: Image._id }, process.env.TOKEN_SECRET)
-  res.header("Auth-token", token)
-  try {
-    saveImg.save()
-    res.send("Image uploaded successfully")
-  } catch (err) {
-    res.status(400).send("Error uploading image")
-  }
-}
-module.exports = { register, login, postImg, postCar, upload }
+module.exports = { register, login }
