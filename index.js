@@ -6,7 +6,8 @@ const mongoose = require("mongoose")
 dotenv.config()
 
 //Import routes
-const authRoute = require("./src/routes/index")
+const authRoute = require("./src/routes/users.routes")
+const carRoute = require("./src/routes/cars.routes.js")
 //Connect to db
 mongoose.connect(process.env.DB_CONNECT, () => {
   console.log("Connected to DB")
@@ -15,6 +16,7 @@ mongoose.connect(process.env.DB_CONNECT, () => {
 app.use(express.json())
 app.use(express.static("uploads"))
 app.use("/api/user", authRoute)
+app.use("/api/product", carRoute)
 
 app.listen(8000, () => {
   console.log("Server is running")

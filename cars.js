@@ -28,11 +28,22 @@ const create = async (req, res) => {
     },
   })
   try {
-    car.save()
+    const savedCar = await car.save()
     res.send({ car: car._id })
   } catch (err) {
     res.status(400).send(err)
   }
 }
+//Car GET All
+const getAll = async (req, res) => {
+  const cars = await Cars.find()
+  return res.json(cars)
+}
+//Car GET 1
+const getCar = async (req, res) => {
+  const { id } = req.params
+  const cars = await Cars.findOne({ id })
+  return res.json(cars)
+}
 
-module.exports = { create, upload }
+module.exports = { create, upload, getCar, getAll }
