@@ -3,7 +3,7 @@ const { upload, create, get, getAll, update, carDelete } = require("../../cars")
 const verify = require("../middlewares/verifytoken")
 
 //Car post
-router.post("/create", verify, upload.single("carImg"), create)
+router.post("/create", upload.single("carImg"), create)
 //Car get all cars
 router.get("/cars", getAll)
 //Car get car

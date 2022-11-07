@@ -62,8 +62,14 @@ const login = async (req, res) => {
     const token = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET)
     res.header("Auth-token", token)
 
-    res.json({ token })
+    res.json({ token, auth: true })
   }
 }
+//Get user
+const getUser = async (req, res) => {
+  const { id } = req.params
+  const user = await User.findOne({ id })
+  return res.json(user)
+}
 
-module.exports = { register, login }
+module.exports = { register, login, getUser }

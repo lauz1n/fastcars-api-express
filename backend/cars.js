@@ -24,11 +24,12 @@ const create = async (req, res) => {
     imgName: req.body.imgName,
     img: {
       data: fs.readFileSync("uploads/" + req.file.filename),
-      contentType: "image/png",
+      contentType: "image/jpg",
     },
   })
   try {
     const savedCar = await car.save()
+
     res.send({ car: car._id })
   } catch (err) {
     res.status(400).send(err)
