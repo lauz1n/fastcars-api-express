@@ -43,13 +43,14 @@
 
 ### Desenvolvido utilizando
 
-* React.js
-* Express.js
-* Material UI
-* JWT (Json Web Token)
-* React Router Dom
-* HTML e CSS Modules
-* MongoDB (Database)
+* React.js (Frontend)
+* Express.js (Backend)
+* Material UI (Frontend)
+* JWT (Json Web Token) (Backend)
+* React Router Dom (Frotnend)
+* HTML e CSS Modules (Frontend)
+* MongoDB (Database) (backend)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -97,7 +98,8 @@ O website conta com funcionalidades simples, desenvolvido utilizando tecnologias
 ### Na página de login, temos um formulário simples, onde o usuário deve se Identificar dando seu nome, usuário e senha.
  * Nome: Administrador, Usuário: admin, Senha: admin0550
 ### Após logado, o usuário será imediatamente navegado para a página de Dashboard, onde poderá fazer o cadastro, delete e edit de Carros.
- * Para cadastrar um carro, preencher todos os campos e fazer o upload de uma imagem em formato jpg ou png.
+ * Para cadastrar um carro, preencher todos os campos e fazer o upload de uma imagem em formato jpg ou png. As rotas de administrador são protegidas utilizando o React Router Dom e fazendo a verificação de Token.
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
