@@ -34,10 +34,10 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">project_title</h3>
+<h3 align="center">Fast Cars App</h3>
 
   <p align="center">
-    project_description
+    Este projeto foi desenvolvido como um teste para a empresa Verzel.
     <br />
     <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
     <br />
@@ -81,7 +81,7 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## O Fast Cars app é um website de vitrine com utilização de 
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
@@ -93,15 +93,8 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 ### Built With
 
-* [![Next][Next.js]][Next-url]
 * [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
-
+*[![Express][Express.js]]
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
