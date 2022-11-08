@@ -9,8 +9,8 @@ router.get("/cars", getAll)
 //Car get car
 router.get("/cars/:id", get)
 //Car update
-router.patch("/cars/:id", verify, update)
+router.patch("/cars/:id", update)
 //Car Delete
-router.delete("/cars/:id", verify, carDelete)
+router.delete("/cars/:id", carDelete)
 
 module.exports = router

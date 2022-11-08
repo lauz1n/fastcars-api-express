@@ -60,7 +60,7 @@ const login = async (req, res) => {
 
     //Creating Token
     const token = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET)
-    res.header("Auth-token", token)
+    res.header("auth-token", token)
 
     res.json({ token, auth: true })
   }
