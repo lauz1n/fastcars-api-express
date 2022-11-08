@@ -81,7 +81,7 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## O Fast Cars app é um website de vitrine com utilização de 
+## Website vitrine com Dashboard
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
@@ -91,19 +91,19 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 
 
-### Built With
+### Desenvolvido utilizando
 
-* [![React][React.js]][React-url]
-*[![Express][Express.js]]
+* React.js
+* Express.js
+* JWT (Json Web Token)
+* HTML e CSS Modules
+* MongoDB (Database)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
 <!-- GETTING STARTED -->
-## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+## Como executar o projeto
 
 ### Prerequisites
 
