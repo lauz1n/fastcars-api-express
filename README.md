@@ -92,11 +92,11 @@
 
 O website conta com funcionalidades simples, desenvolvido utilizando tecnologias atuais para funcionamento.
 
-1. Logo na primeira página, podemos ver a representação simples do que seria a vitrine.
+### Logo na primeira página, podemos ver a representação simples do que seria a vitrine.
  * Na vitrine, temos acesso ao filtro, onde os carros podem ser ordenados por valor crescente e decrescente.
-2. Na página de login, temos um formulário simples, onde o usuário deve se Identificar dando seu nome, usuário e senha.
+### Na página de login, temos um formulário simples, onde o usuário deve se Identificar dando seu nome, usuário e senha.
  * Nome: Administrador, Usuário: admin, Senha: admin0550
-3. Após logado, o usuário será imediatamente navegado para a página de Dashboard, onde poderá fazer o cadastro, delete e edit de Carros.
+### Após logado, o usuário será imediatamente navegado para a página de Dashboard, onde poderá fazer o cadastro, delete e edit de Carros.
  * Para cadastrar um carro, preencher todos os campos e fazer o upload de uma imagem em formato jpg ou png.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
