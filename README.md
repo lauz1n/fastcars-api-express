@@ -55,6 +55,7 @@
 * React Router Dom (Frotnend)
 * HTML e CSS Modules (Frontend)
 * MongoDB (Database) (backend)
+* Postman (Teste de Endpoints)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
