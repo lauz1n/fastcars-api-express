@@ -3,7 +3,6 @@
 <h3 align="center">Fast Cars App</h3>
 
   <p align="center">
-    Este projeto foi desenvolvido como um teste para a empresa Verzel.
     O projeto conta com a utilização de tecnologias atuais para desenvolvimento, pensando em reutilização de Componentes utilizando o React, estruturação correta de pastas e demais utilidades.
 
 
