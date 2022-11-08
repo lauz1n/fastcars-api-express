@@ -8,6 +8,7 @@
     O API faz integração com MongoDB, para armazenamento das informações enviadas, para conexão e criação de Models entre as partes, foi utilizado o Mongoose, o que facilita a utilização do DB.
     No Frontend foi utilizado Material UI para construção da parte visual, o projeto também conta com React Router Dom, fornecendo paginação na navegação do usuário. 
     As funcionalidades de Administrador estão sendo controladas através do uso do ContextAPI do React, onde passo um estado global de Login, caso a verificação conste como falsa na existência de um Token após o login, o usuário não pode acessar as rotas de Administração.
+    Os carros estão mapeados e listados com nome, marca, modelo, preço e todos também contém um id único gerado na hora da criação.
 
 
 
