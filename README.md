@@ -112,16 +112,23 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
   npm install npm@latest -g
   ```
 
-### Installation
+### Instalação
 
-1. Get a free API Key at [https://example.com](https://example.com)
-1. Clone the repo
+1. Clonar o repositório
    ```sh
-   git clone [https://github.com/lauz1n/fastcars-api-express.git]
+   git clone https://github.com/lauz1n/fastcars-api-express.git
    ```
-2. Install NPM packages
+2. Instalar NPM
    ```sh
    npm install
+   ```
+3. Splitar terminal e acessar pastas frontend e backend
+   ```
+   cd backend, cd frontend-app
+   ```
+4. Utilizar npm start para começar
+   ```
+   npm start 
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -129,7 +136,7 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 
 <!-- USAGE EXAMPLES -->
-## Usage
+## Utilização
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
