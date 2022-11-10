@@ -49,11 +49,11 @@
 ### Desenvolvido utilizando
 
 * React.js (Frontend)
-* Express.js (Backend)
 * Material UI (Frontend)
-* JWT (Json Web Token) (Backend)
-* React Router Dom (Frotnend)
 * HTML e CSS Modules (Frontend)
+* React Router Dom (Frotend)
+* Express.js (Backend)
+* JWT (Json Web Token) (Backend)
 * MongoDB (Database) (backend)
 * Postman (Teste de Endpoints)
 
