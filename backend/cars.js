@@ -43,15 +43,15 @@ const getAll = async (req, res) => {
 }
 //Car GET 1
 const get = async (req, res) => {
-  const { id } = req.params
-  const cars = await Cars.findOne({ id })
+  const id = req.params.id
+  const cars = await Cars.findOne({ _id: id })
   return res.status(200).json(cars)
 }
 //Car UPDATE
 const update = async (req, res) => {
   try {
     const updatedCar = await Cars.findOneAndUpdate(
-      { id: req.params.id },
+      { _id: req.params.id },
       req.body,
       { new: true }
     )
@@ -65,7 +65,7 @@ const update = async (req, res) => {
 const carDelete = async (req, res) => {
   console.log(req.params)
   try {
-    const removedCar = await Cars.deleteOne({ id: req.params.id })
+    const removedCar = await Cars.deleteOne({ _id: req.params.id })
     res.json(removedCar)
   } catch (err) {
     res.json(err)
