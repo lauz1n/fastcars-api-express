@@ -63,7 +63,7 @@
 
 <!-- GETTING STARTED -->
 ## Como executar o projeto
-###Clonar repositório
+### Clonar repositório
    ```sh
    git clone https://github.com/lauz1n/fastcars-api-express.git
    ```
