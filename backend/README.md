@@ -1,5 +1,7 @@
 
-## Listagem de Endpoints
+# Listagem de Endpoints
+
+## Todos os Endpoints foram testados utilizando a ferramenta de Postman
 
 ### Usuários
 1. Endpoint de Criação de Usuário
