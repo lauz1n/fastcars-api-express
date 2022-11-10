@@ -28,7 +28,7 @@
 * MongoDB (Database) (Backend)
 * Postman (Teste de Endpoints)
 
-#### Para endpoints, acessar README da pasta backend
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -56,6 +56,7 @@
    ```
    npm start 
    ```
+##### Para endpoints, acessar README da pasta backend
 #### Frontend
 
 1. Abrir terminal e acessar pasta frontend-app
