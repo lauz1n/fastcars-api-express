@@ -64,13 +64,6 @@
 <!-- GETTING STARTED -->
 ## Como executar o projeto
 
-### Prerequisitos
-
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
-
 ### Instalação
 
 1. Clonar o repositório
