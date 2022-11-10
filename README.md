@@ -69,19 +69,37 @@
    ```
 ### Passo a passo
 
-####Backend
+#### Backend
 
-1. Splitar terminal e acessar pastas frontend e backend em seus respectivos terminais
+1. Abrir terminal e acessar pasta backend
    ```sh
-    cd backend, cd frontend-app
+    cd backend
    ```
-2. Rodar o comando abaixo nos dois terminais após acessar os mesmos
+2. Instalar dependencias
    ```
    npm install
    ```
-3. Executar o comando abaixo para começar em ambos os terminais
+3. Executar o servidor
    ```
    npm start 
+   ```
+#### Frontend
+
+1. Abrir terminal e acessar pasta frontend-app
+   ```sh
+    cd frontend-app
+   ```
+2. Instalar dependencias
+   ```
+   npm install
+   ```
+3. Executar o servidor
+   ```
+   npm start 
+   ```
+4. Acessar o aplicativo 
+   ```
+   http://localhost:3000
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
