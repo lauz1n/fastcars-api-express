@@ -55,7 +55,7 @@ const Cards = () => {
       <Container maxWidth="md" className={styles.cardGrid}>
         <Grid container spacing={4}>
           {cars.map((car) => (
-            <Grid item key={car.id} xs={12} sm={6} md={4}>
+            <Grid item key={car._id} xs={12} sm={6} md={4}>
               <Card className={styles.car}>
                 <CardMedia
                   component="img"

@@ -9,24 +9,38 @@ import {
   Typography,
 } from "@mui/material"
 import styles from "./Car.module.css"
+import { useNavigate } from "react-router-dom"
 
-const Car = ({ name, brand, model, price, imgName, img, _id }) => {
-  async function deleteCar(_id) {
-    const response = await fetch(
-      `http://localhost:8000/api/product/cars/${_id}`,
-      {
-        method: "DELETE",
-        headers: {
-          Authorization: "auth-token" + window.localStorage.getItem("token"),
-        },
+const Car = ({ name, brand, model, price, imgName, img, id }) => {
+  const navigate = useNavigate()
+
+  async function deleteCar() {
+    if (window.confirm("Tem certeza que deseja deletar " + name)) {
+      const response = await fetch(
+        `http://localhost:8000/api/product/cars/${id}`,
+        {
+          method: "DELETE",
+          headers: {
+            Authorization: "auth-token " + window.localStorage.getItem("token"),
+          },
+        }
+      )
+      if (response.ok) {
+        window.location.reload()
       }
-    )
-    if (response.ok) {
-      window.location.reload()
     }
   }
+
+  function handleEdit() {
+    navigate("/admin/car/edit/" + id)
+  }
+
   return (
-    <Container maxWidth="md" align="center">
+    <Container
+      maxWidth="md"
+      align="center"
+      sx={{ height: "100%", marginTop: "30px " }}
+    >
       <Grid container columns={{ colSpan: "2" }}>
         <Grid item xs={12} sm={6} md={4}>
           <Card
@@ -51,13 +65,11 @@ const Car = ({ name, brand, model, price, imgName, img, _id }) => {
                 flexDirection: "row",
               }}
             >
-              <Button variant="contained">Edit</Button>
-              <Button
-                variant="outlined"
-                color="error"
-                onClick={() => deleteCar(_id)}
-              >
-                Delete
+              <Button onClick={handleEdit} variant="contained">
+                Editar
+              </Button>
+              <Button variant="outlined" color="error" onClick={deleteCar}>
+                Deletar
               </Button>
             </CardActions>
           </Card>

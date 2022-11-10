@@ -10,6 +10,7 @@ import {
 } from "./Components"
 import { CssBaseline } from "@mui/material"
 import { UserStorage } from "./UserContext"
+import "./App.css"
 
 const App = () => {
   return (
@@ -17,7 +18,7 @@ const App = () => {
       <UserStorage>
         <CssBaseline />
         <Header />
-        <main>
+        <main className="App">
           <Routes>
             <Route path="/" element={<Hero />} />
             <Route path="login/*" element={<AdminLogin />} />

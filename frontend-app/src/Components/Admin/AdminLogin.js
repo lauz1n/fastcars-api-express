@@ -16,7 +16,6 @@ import styles from "./AdminLogin.module.css"
 const theme = createTheme()
 
 const AdminLogin = () => {
-  //const { userLogin } = useContext(UserContext)
   const [name, setName] = useState("")
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")

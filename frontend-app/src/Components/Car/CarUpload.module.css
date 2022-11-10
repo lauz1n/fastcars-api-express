@@ -1,0 +1,15 @@
+.gridcontainer {
+  display: grid;
+  justify-content: center;
+  margin-bottom: 1rem
+}
+
+.btns {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  display: block;
+}
+

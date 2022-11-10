@@ -23,7 +23,6 @@ export function USER_GET(body) {
 }
 
 export function USER_POST(body) {
-  console.log(body)
   return {
     url: API_USER_URL + "/login",
     options: {

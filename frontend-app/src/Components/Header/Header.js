@@ -1,11 +1,12 @@
 import React, { useContext } from "react"
 import { Link } from "react-router-dom"
-import { AppBar, Toolbar, Typography } from "@mui/material"
+import { AppBar, Toolbar, Typography, Button } from "@mui/material"
 import ElectricBoltSharpIcon from "@mui/icons-material/ElectricBoltSharp"
 import { UserContext } from "../../UserContext"
 
 const Header = () => {
   const { login } = useContext(UserContext)
+
   return (
     <>
       <AppBar position="relative">
@@ -25,11 +26,9 @@ const Header = () => {
             />
           </Link>
 
-          <Link to="/login">
-            <Typography color="white" style={{ textDecoration: "none" }}>
-              Login
-            </Typography>
-          </Link>
+          <Typography color="white" style={{ textDecoration: "none" }}>
+            <Link to="/login">Login</Link>
+          </Typography>
         </Toolbar>
       </AppBar>
     </>

@@ -1,6 +1,15 @@
-import React, { useState } from "react"
-import { Button, Stack, Box, Container } from "@mui/material"
+import React, { useState, useEffect } from "react"
+import {
+  Button,
+  Stack,
+  Box,
+  Container,
+  TextField,
+  CssBaseline,
+} from "@mui/material"
 import PhotoCamera from "@mui/icons-material/PhotoCamera"
+import styles from "./CarUpload.module.css"
+import { useParams } from "react-router-dom"
 
 const CarUpload = () => {
   const [carImg, setCarImg] = useState({})
@@ -9,16 +18,52 @@ const CarUpload = () => {
   const [model, setModel] = useState("")
   const [price, setPrice] = useState("")
 
-  const saveCar = async (formData) => {
-    const response = await fetch("http://localhost:8000/api/product/create", {
-      method: "POST",
-      headers: {
-        Authorization: "auth-token" + window.localStorage.getItem("token"),
-      },
-      body: formData,
-    })
+  const params = useParams()
 
-    console.log(await response.json())
+  useEffect(() => {
+    if (params.id) {
+      fetch("http://localhost:8000/api/product/cars/" + params.id)
+        .then((response) => response.json())
+        .then((data) => {
+          setName(data.name)
+          setBrand(data.brand)
+          setModel(data.model)
+          setPrice(data.price)
+        })
+    }
+  }, [])
+
+  const saveCar = async (formData) => {
+    if (!params.id) {
+      const response = await fetch("http://localhost:8000/api/product/create", {
+        method: "POST",
+        headers: {
+          Authorization: "auth-token " + window.localStorage.getItem("token"),
+        },
+        body: formData,
+      })
+
+      if (response.ok) {
+        window.location.reload()
+      }
+
+      return
+    }
+
+    const response = await fetch(
+      "http://localhost:8000/api/product/cars/" + params.id,
+      {
+        method: "PATCH",
+        headers: {
+          Authorization: "auth-token " + window.localStorage.getItem("token"),
+        },
+        body: formData,
+      }
+    )
+
+    if (response.ok) {
+      //window.location.reload()
+    }
   }
 
   function handleSubmit(e) {
@@ -42,45 +87,74 @@ const CarUpload = () => {
 
   return (
     <>
-      <Container maxWidth="md">
-        <Box component="form" onSubmit={handleSubmit}>
+      <CssBaseline />
+      <Container maxWidth="lg">
+        <Box
+          component="form"
+          onSubmit={handleSubmit}
+          className={styles.gridcontainer}
+        >
+          <Stack
+            direction="column"
+            justifyContent="center"
+            alignItems="stretch"
+            spacing={1}
+          >
+            <Box sx={{ width: "900px" }}>
+              <TextField
+                label="Nome"
+                fullWidth
+                margin="normal"
+                size="small"
+                id="name"
+                name="name"
+                onChange={(e) => setName(e.currentTarget.value)}
+                value={name}
+              />
+
+              <TextField
+                label="Marca"
+                fullWidth
+                margin="normal"
+                size="small"
+                id="brand"
+                name="brand"
+                onChange={(e) => setBrand(e.currentTarget.value)}
+                value={brand}
+              />
+
+              <TextField
+                label="Modelo"
+                fullWidth
+                size="small"
+                margin="normal"
+                id="model"
+                name="model"
+                onChange={(e) => setModel(e.currentTarget.value)}
+                value={model}
+              />
+
+              <TextField
+                label="Preço"
+                fullWidth
+                margin="normal"
+                size="small"
+                id="price"
+                name="price"
+                onChange={(e) => setPrice(e.currentTarget.value)}
+                value={price}
+              />
+            </Box>
+          </Stack>
           <Stack
             direction="row"
-            alignItems="center"
-            spacing={2}
-            style={{ display: "flex", flexDirection: "column", gap: "8px" }}
+            spacing={{ sm: 1 }}
+            justifyContent="space-between"
+            alignItems="flex-end"
           >
-            <label htmlFor="name">Nome</label>
-            <input
-              id="name"
-              name="name"
-              onChange={(e) => setName(e.currentTarget.value)}
-              value={name}
-            />
-            <label htmlFor="brand">Marca</label>
-            <input
-              id="brand"
-              name="brand"
-              onChange={(e) => setBrand(e.currentTarget.value)}
-              value={brand}
-            />
-            <label htmlFor="model">Modelo</label>
-            <input
-              id="model"
-              name="model"
-              onChange={(e) => setModel(e.currentTarget.value)}
-              value={model}
-            />
-            <label htmlFor="price">Preço</label>
-            <input
-              id="name"
-              name="price"
-              onChange={(e) => setPrice(e.currentTarget.value)}
-              value={price}
-            />
-
-            <Button variant="contained" component="label">
-              Foto <PhotoCamera />
+            <Button variant="contained" component="label" id="btn">
+              <PhotoCamera />
+              Escolha um Arquivo
               <input
                 hidden
                 accept="image/*"
@@ -91,7 +165,9 @@ const CarUpload = () => {
               />
             </Button>
 
-            <button type="submit">Cadastrar</button>
+            <Button type="submit" variant="contained" id="btn">
+              Cadastrar
+            </Button>
           </Stack>
         </Box>
       </Container>

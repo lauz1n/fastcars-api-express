@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React from "react"
 
 import { Routes, Route } from "react-router-dom"
 import { CarUpload, AdminDashboard } from "../index"
@@ -8,6 +8,7 @@ const Admin = () => {
     <section>
       <Routes>
         <Route path="dashboard" element={<AdminDashboard />} />
+        <Route path="car/edit/:id" element={<CarUpload />} />
       </Routes>
     </section>
   )

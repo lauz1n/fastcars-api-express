@@ -6,7 +6,6 @@ export function sortByPrice(filter, cars) {
   if (filter === "low") {
     return cars.sort((car, nextCar) => car.price - nextCar.price)
   }
-
   return cars.sort((car, nextCar) => nextCar.price - car.price)
 }
 
@@ -32,7 +31,6 @@ const AdminDashboard = () => {
   useEffect(() => {
     const carsFiltered = sortByPrice(filter, cars)
     setCars([...carsFiltered])
-    console.log("test")
   }, [filter])
 
   function handleFilter(event) {
@@ -42,9 +40,8 @@ const AdminDashboard = () => {
 
   return (
     <>
-      <SelectByPrice onChange={handleFilter} />
-
       <CarUpload />
+      <SelectByPrice onChange={handleFilter} />
 
       <Container maxWidth="md" sx={{ marginTop: "30px" }}>
         <div>
@@ -56,7 +53,8 @@ const AdminDashboard = () => {
             )
             return (
               <Car
-                key={car.id}
+                key={car._id}
+                id={car._id}
                 name={car.name}
                 model={car.model}
                 brand={car.brand}

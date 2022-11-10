@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { USER_POST, USER_GET } from "./api"
+import { USER_POST } from "./api"
 import { useNavigate } from "react-router-dom"
 
 export const UserContext = React.createContext()
@@ -24,7 +24,7 @@ export const UserStorage = ({ children }) => {
   }
 
   return (
-    <UserContext.Provider value={{ userLogin, login }}>
+    <UserContext.Provider value={{ userLogin, login, setLogin }}>
       {children}
     </UserContext.Provider>
   )
