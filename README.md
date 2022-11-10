@@ -28,6 +28,8 @@
 * MongoDB (Database) (Backend)
 * Postman (Teste de Endpoints)
 
+#### Para endpoints, acessar README da pasta backend
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
