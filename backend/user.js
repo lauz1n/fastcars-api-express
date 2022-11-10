@@ -65,11 +65,5 @@ const login = async (req, res) => {
     res.json({ token, auth: true })
   }
 }
-//Get user
-const getUser = async (req, res) => {
-  const { id } = req.params
-  const user = await User.findOne({ id })
-  return res.json(user)
-}
 
-module.exports = { register, login, getUser }
+module.exports = { register, login }

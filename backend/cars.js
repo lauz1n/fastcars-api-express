@@ -49,25 +49,34 @@ const get = async (req, res) => {
 }
 //Car UPDATE
 const update = async (req, res) => {
+  const carConverted = {
+    ...req.body,
+  }
+
+  Object.keys(carConverted).forEach((key) => {
+    if (carConverted[key] === undefined) {
+      delete carConverted[key]
+    }
+  })
+  console.log(req.body)
   try {
-    const updatedCar = await Cars.updateOne(
+    const updatedCar = await Cars.findOneAndUpdate(
       { id: req.params.id },
-      {
-        $set: {
-          name: req.body.name,
-          brand: req.body.brand,
-          model: req.body.model,
-          price: req.body.price,
-        },
-      }
+
+      carConverted,
+
+      { new: true }
     )
     res.json(updatedCar)
   } catch (err) {
-    res.status(404).send("Error updating car")
+    res.status(404).send("Error updating car", err)
   }
+  console.log(req.body)
 }
+
 //Car DELETE
 const carDelete = async (req, res) => {
+  console.log(req.params)
   try {
     const removedCar = await Cars.deleteOne({ id: req.params.id })
     res.json(removedCar)
