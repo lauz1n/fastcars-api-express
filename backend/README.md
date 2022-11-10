@@ -21,5 +21,5 @@
    ```
  3. Endpoints de DELEÇÃO e UPDATE de carros
    ```
-    /api/product/cars/:id
+   /api/product/cars/:id
    ```
