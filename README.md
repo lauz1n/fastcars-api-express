@@ -63,22 +63,23 @@
 
 <!-- GETTING STARTED -->
 ## Como executar o projeto
-
-### Instalação
-
 1. Clonar o repositório
    ```sh
    git clone https://github.com/lauz1n/fastcars-api-express.git
    ```
-2. Splitar terminal e acessar pastas frontend e backend em seus respectivos terminais
+### Passo a passo
+
+####Backend
+
+1. Splitar terminal e acessar pastas frontend e backend em seus respectivos terminais
    ```sh
     cd backend, cd frontend-app
    ```
-3. Rodar o comando abaixo nos dois terminais após acessar os mesmos
+2. Rodar o comando abaixo nos dois terminais após acessar os mesmos
    ```
    npm install
    ```
-4. Executar o comando abaixo para começar em ambos os terminais
+3. Executar o comando abaixo para começar em ambos os terminais
    ```
    npm start 
    ```
