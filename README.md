@@ -70,15 +70,15 @@
    ```sh
    git clone https://github.com/lauz1n/fastcars-api-express.git
    ```
-2. Instalar NPM
+2. Splitar terminal e acessar pastas frontend e backend em seus respectivos terminais
    ```sh
+    cd backend, cd frontend-app
+   ```
+3. Rodar o comando abaixo nos dois terminais após acessar os mesmos
+   ```
    npm install
    ```
-3. Splitar terminal e acessar pastas frontend e backend
-   ```
-   cd backend, cd frontend-app
-   ```
-4. Utilizar npm start para começar
+4. Executar o comando abaixo para começar em ambos os terminais
    ```
    npm start 
    ```
@@ -96,8 +96,10 @@ O website conta com funcionalidades simples, desenvolvido utilizando tecnologias
  * Na vitrine, temos acesso ao filtro, onde os carros podem ser ordenados por valor crescente e decrescente.
 ### Na página de login, temos um formulário simples, onde o usuário deve se Identificar dando seu nome, usuário e senha.
  * Nome: Administrador, Usuário: admin, Senha: admin0550
-### Após logado, o usuário será imediatamente navegado para a página de Dashboard, onde poderá fazer o cadastro, delete e edit de Carros.
+### Após logado, o usuário será imediatamente navegado para a página de Dashboard, onde poderá fazer o cadastro, delete e edit de carros.
  * Para cadastrar um carro, preencher todos os campos e fazer o upload de uma imagem em formato jpg ou png. As rotas de administrador são protegidas utilizando o React Router Dom e fazendo a verificação de Token.
+ * Para editar um carro, clickar no botão Editar e alterar os campos desejados.
+ * Para Deletar, basta clickar no botão Deletar
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
