@@ -1,7 +1,7 @@
 
 # Listagem de Endpoints
 
-## Todos os Endpoints foram testados utilizando a ferramenta de Postman. Endpoints com o middleware "verify", são autenticados via Jason Web Token.
+## Todos os Endpoints foram testados utilizando a ferramenta Postman. Endpoints com o middleware "verify", são autenticados via Jason Web Token.
 
 ### Usuários
 1. Endpoint de Criação de Usuário
