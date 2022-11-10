@@ -54,7 +54,7 @@
 * React Router Dom (Frotend)
 * Express.js (Backend)
 * JWT (Json Web Token) (Backend)
-* MongoDB (Database) (backend)
+* MongoDB (Database) (Backend)
 * Postman (Teste de Endpoints)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
