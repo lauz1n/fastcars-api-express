@@ -49,29 +49,16 @@ const get = async (req, res) => {
 }
 //Car UPDATE
 const update = async (req, res) => {
-  const carConverted = {
-    ...req.body,
-  }
-
-  Object.keys(carConverted).forEach((key) => {
-    if (carConverted[key] === undefined) {
-      delete carConverted[key]
-    }
-  })
-  console.log(req.body)
   try {
     const updatedCar = await Cars.findOneAndUpdate(
       { id: req.params.id },
-
-      carConverted,
-
+      req.body,
       { new: true }
     )
     res.json(updatedCar)
   } catch (err) {
     res.status(404).send("Error updating car", err)
   }
-  console.log(req.body)
 }
 
 //Car DELETE

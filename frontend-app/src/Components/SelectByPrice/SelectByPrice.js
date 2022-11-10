@@ -1,6 +1,5 @@
 import React from "react"
 import { Container, InputLabel } from "@mui/material"
-import ElectricBoltSharpIcon from "@mui/icons-material/ElectricBoltSharp"
 
 export default function SelectByPrice({ onChange }) {
   return (

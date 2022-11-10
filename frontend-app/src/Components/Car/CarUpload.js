@@ -6,6 +6,7 @@ import {
   Container,
   TextField,
   CssBaseline,
+  Typography,
 } from "@mui/material"
 import PhotoCamera from "@mui/icons-material/PhotoCamera"
 import styles from "./CarUpload.module.css"
@@ -50,19 +51,28 @@ const CarUpload = () => {
       return
     }
 
+    const newData = {
+      brand,
+      name,
+      price,
+      model,
+    }
+
     const response = await fetch(
       "http://localhost:8000/api/product/cars/" + params.id,
       {
         method: "PATCH",
         headers: {
           Authorization: "auth-token " + window.localStorage.getItem("token"),
+          Accept: "application/json",
+          "Content-Type": "application/json",
         },
-        body: formData,
+        body: JSON.stringify(newData),
       }
     )
 
     if (response.ok) {
-      //window.location.reload()
+      window.location.reload()
     }
   }
 
@@ -89,6 +99,9 @@ const CarUpload = () => {
     <>
       <CssBaseline />
       <Container maxWidth="lg">
+        <Typography variant="h5" align="center" mt={2}>
+          {params.id ? "Edição de Carros" : "Cadastro de Carros"}{" "}
+        </Typography>
         <Box
           component="form"
           onSubmit={handleSubmit}
@@ -165,8 +178,8 @@ const CarUpload = () => {
               />
             </Button>
 
-            <Button type="submit" variant="contained" id="btn">
-              Cadastrar
+            <Button type="submit" variant="outlined" id="btn">
+              {params.id ? "Confirmar Edição" : "Cadastrar"}
             </Button>
           </Stack>
         </Box>

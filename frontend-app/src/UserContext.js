@@ -15,9 +15,9 @@ export const UserStorage = ({ children }) => {
       const tokenRes = await fetch(url, options)
       if (!tokenRes) throw new Error("Invalid login")
       const { token } = await tokenRes.json()
+      setLogin(true)
       window.localStorage.setItem("token", token)
       navigate("/admin/dashboard")
-      setLogin(true)
     } catch (err) {
       setLogin(false)
     }

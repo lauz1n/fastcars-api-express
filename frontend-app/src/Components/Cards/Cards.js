@@ -22,7 +22,7 @@ function createImage(car) {
 
 const Cards = () => {
   const [cars, setCars] = useState([])
-  const [filter, setFilter] = useState("low")
+  const [filter, setFilter] = useState("")
 
   useEffect(() => {
     const carsFiltered = sortByPrice(filter, cars)

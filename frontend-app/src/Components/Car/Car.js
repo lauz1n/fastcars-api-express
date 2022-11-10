@@ -32,14 +32,17 @@ const Car = ({ name, brand, model, price, imgName, img, id }) => {
   }
 
   function handleEdit() {
-    navigate("/admin/car/edit/" + id)
+    navigate(
+      "/admin/car/edit/" + id,
+      window.scrollTo({ top: 0, behavior: "smooth" })
+    )
   }
 
   return (
     <Container
       maxWidth="md"
       align="center"
-      sx={{ height: "100%", marginTop: "30px " }}
+      sx={{ height: "100%", marginTop: "30px", marginBottom: "30px" }}
     >
       <Grid container columns={{ colSpan: "2" }}>
         <Grid item xs={12} sm={6} md={4}>
@@ -52,11 +55,11 @@ const Car = ({ name, brand, model, price, imgName, img, id }) => {
             }}
           >
             <CardContent styles={{ flexGrow: "1" }}>
-              <Typography sx={{ fontSize: "24px", fontWeight: "700" }}>
+              <Typography sx={{ fontSize: "26px", fontWeight: "700" }}>
                 {name} {brand} {model}
               </Typography>
               <img src={img} alt={imgName} />
-              <Typography sx={{ fontSize: "24px" }}>R$ {price}</Typography>
+              <Typography sx={{ fontSize: "26px" }}>R$ {price}</Typography>
             </CardContent>
             <CardActions
               sx={{

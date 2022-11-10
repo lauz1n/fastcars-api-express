@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { Container } from "@mui/material"
-import { Car, SelectByPrice, CarUpload } from "../index"
+import { Car, SelectByPrice, CarUpload, Head } from "../index"
 
 export function sortByPrice(filter, cars) {
   if (filter === "low") {
@@ -11,7 +11,7 @@ export function sortByPrice(filter, cars) {
 
 const AdminDashboard = () => {
   const [cars, setCars] = useState([])
-  const [filter, setFilter] = useState("low")
+  const [filter, setFilter] = useState("")
 
   useEffect(() => {
     async function getCars() {
@@ -40,6 +40,7 @@ const AdminDashboard = () => {
 
   return (
     <>
+      <Head title="Admin Dashboard" />
       <CarUpload />
       <SelectByPrice onChange={handleFilter} />
 

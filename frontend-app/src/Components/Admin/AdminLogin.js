@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react"
+import React, { useState, useContext } from "react"
 import {
   Avatar,
   Button,
@@ -12,6 +12,7 @@ import { UserContext } from "../../UserContext"
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined"
 import { createTheme, ThemeProvider } from "@mui/material/styles"
 import styles from "./AdminLogin.module.css"
+import { Head } from "../index"
 
 const theme = createTheme()
 
@@ -30,6 +31,7 @@ const AdminLogin = () => {
   return (
     <ThemeProvider theme={theme}>
       <Container maxWidth="xs" className={styles.container}>
+        <Head title="Login" />
         <CssBaseline />
         <Box
           sx={{
