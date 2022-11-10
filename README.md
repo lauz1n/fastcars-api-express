@@ -43,7 +43,7 @@
 ### Passo a passo
 
 #### Backend
-
+##### Para endpoints, acessar README da pasta backend
 1. Abrir terminal e acessar pasta backend
    ```sh
     cd backend
@@ -56,7 +56,6 @@
    ```
    npm start 
    ```
-##### Para endpoints, acessar README da pasta backend
 #### Frontend
 
 1. Abrir terminal e acessar pasta frontend-app
