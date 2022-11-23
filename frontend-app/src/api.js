@@ -1,5 +1,5 @@
-export const API_USER_URL = "http://localhost:8000/api/user"
-export const API_CAR_URL = "http://localhost:8000/api/product"
+export const API_USER_URL = "https://api-fastcars.herokuapp.com/api/user"
+export const API_CAR_URL = "https://api-fastcars.herokuapp.com/api/product"
 
 export function GET_ALL_CARS() {
   return {
