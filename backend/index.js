@@ -20,6 +20,6 @@ app.use(express.static("uploads"))
 app.use("/api/user", authRoute)
 app.use("/api/product", carRoute)
 
-app.listen(8000, () => {
+app.listen(process.env.PORT || 8000, () => {
   console.log("Server is running")
 })
