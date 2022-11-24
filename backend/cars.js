@@ -30,7 +30,6 @@ const create = async (req, res) => {
   })
   try {
     const savedCar = await car.save()
-
     res.send({ car: car._id })
   } catch (err) {
     res.status(400).send(err)
