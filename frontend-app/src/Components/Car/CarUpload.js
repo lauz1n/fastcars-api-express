@@ -10,7 +10,7 @@ import {
 } from "@mui/material"
 import PhotoCamera from "@mui/icons-material/PhotoCamera"
 import styles from "./CarUpload.module.css"
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 
 const CarUpload = () => {
   const [carImg, setCarImg] = useState({})
@@ -20,10 +20,11 @@ const CarUpload = () => {
   const [price, setPrice] = useState("")
 
   const params = useParams()
+  const navigate = useNavigate()
 
   useEffect(() => {
     if (params.id) {
-      fetch("https://api-fastcars.herokuapp.com/api/product/cars/" + params.id)
+      fetch("https://api-fastcars.herokuapp.com/product/cars/" + params.id)
         .then((response) => response.json())
         .then((data) => {
           setName(data.name)
@@ -48,7 +49,7 @@ const CarUpload = () => {
       )
 
       if (response.ok) {
-        window.location.reload()
+        navigate("/admin/dashboard")
       }
 
       return
