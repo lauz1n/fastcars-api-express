@@ -49,7 +49,7 @@ const CarUpload = () => {
       )
 
       if (response.ok) {
-        navigate("/admin/dashboard")
+        window.location.reload()
       }
 
       return
@@ -76,7 +76,7 @@ const CarUpload = () => {
     )
 
     if (response.ok) {
-      window.location.reload()
+      navigate("/admin/dashboard")
     }
   }
 
