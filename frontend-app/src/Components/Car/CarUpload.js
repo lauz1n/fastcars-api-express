@@ -24,7 +24,7 @@ const CarUpload = () => {
 
   useEffect(() => {
     if (params.id) {
-      fetch("https://api-fastcars.herokuapp.com/product/cars/" + params.id)
+      fetch("https://api-fastcars.herokuapp.com/api/product/cars/" + params.id)
         .then((response) => response.json())
         .then((data) => {
           setName(data.name)
