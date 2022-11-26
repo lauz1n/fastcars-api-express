@@ -15,12 +15,15 @@ const AdminDashboard = () => {
 
   useEffect(() => {
     async function getCars() {
-      const response = await fetch("http://localhost:8000/api/product/cars", {
-        method: "GET",
-        headers: {
-          cache: "no-store",
-        },
-      })
+      const response = await fetch(
+        "https://api-fastcars.herokuapp.com/api/product/cars",
+        {
+          method: "GET",
+          headers: {
+            cache: "no-store",
+          },
+        }
+      )
       const data = await response.json()
 
       setCars(data)
@@ -47,11 +50,6 @@ const AdminDashboard = () => {
       <Container maxWidth="md" sx={{ marginTop: "30px" }}>
         <div>
           {cars.map((car) => {
-            //const b64encoded = btoa(
-            //new Uint8Array(car.img.data.data).reduce(function (data, byte) {
-            //return data + String.fromCharCode(byte)
-            //}, "")
-
             return (
               <Car
                 key={car._id}
@@ -60,7 +58,7 @@ const AdminDashboard = () => {
                 model={car.model}
                 brand={car.brand}
                 price={car.price}
-                img={`http://localhost:8000/${car.img}`}
+                img={`https://api-fastcars.herokuapp.com/${car.img}`}
                 alt={car.alt}
               />
             )
