@@ -17,7 +17,7 @@ mongoose.connect(process.env.DB_CONNECT, () => {
 
 app.use(cors())
 app.use(express.json())
-app.use("/public", express.static(path.resolve("./uploads")))
+app.use(express.static(path.join("uploads")))
 app.use("/api/user", authRoute)
 app.use("/api/product", carRoute)
 

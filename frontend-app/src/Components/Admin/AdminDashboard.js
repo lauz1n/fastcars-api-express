@@ -60,7 +60,7 @@ const AdminDashboard = () => {
                 model={car.model}
                 brand={car.brand}
                 price={car.price}
-                img={`https://api-fastcars.herokuapp.com/${car.img}`}
+                img={`http://localhost:8000/${car.img}`}
                 alt={car.alt}
               />
             )

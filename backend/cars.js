@@ -23,8 +23,9 @@ const create = async (req, res) => {
     model: req.body.model,
     price: req.body.price,
     imgName: req.body.imgName,
-    img: `/${req.file.filename}.jpg`,
+    img: `${req.file.filename}`,
   })
+  console.log(car)
   try {
     const savedCar = await car.save()
     res.send({ car: car._id })
