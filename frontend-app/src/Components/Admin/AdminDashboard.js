@@ -50,11 +50,6 @@ const AdminDashboard = () => {
       <Container maxWidth="md" sx={{ marginTop: "30px" }}>
         <div>
           {cars.map((car) => {
-            const b64encoded = btoa(
-              new Uint8Array(car.img.data.data).reduce(function (data, byte) {
-                return data + String.fromCharCode(byte)
-              }, "")
-            )
             return (
               <Car
                 key={car._id}
@@ -63,7 +58,7 @@ const AdminDashboard = () => {
                 model={car.model}
                 brand={car.brand}
                 price={car.price}
-                img={`data:image/png;base64, ${b64encoded}`}
+                img={`https://api-fastcars.herokuapp.com/${car.img}`}
                 alt={car.alt}
               />
             )

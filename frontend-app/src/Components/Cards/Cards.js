@@ -12,14 +12,6 @@ import {
 import { sortByPrice } from "../Admin/AdminDashboard"
 import { SelectByPrice } from "../index"
 
-function createImage(car) {
-  return btoa(
-    new Uint8Array(car.img.data.data).reduce(function (data, byte) {
-      return data + String.fromCharCode(byte)
-    }, "")
-  )
-}
-
 const Cards = () => {
   const [cars, setCars] = useState([])
   const [filter, setFilter] = useState("")
@@ -64,7 +56,7 @@ const Cards = () => {
                   component="img"
                   variant="outlined"
                   className="cardMedia"
-                  image={`data:image/png;base64, ${createImage(car)}`}
+                  image={`https://api-fastcars.herokuapp.com/${car.img}`}
                   title="Image Title"
                 />
                 <CardContent className={styles.cardContent}>
