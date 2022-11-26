@@ -23,10 +23,7 @@ const create = async (req, res) => {
     model: req.body.model,
     price: req.body.price,
     imgName: req.body.imgName,
-    img: {
-      data: fs.readFileSync("uploads/" + req.file.filename),
-      contentType: "image/jpg",
-    },
+    img: `/${req.file.filename}.jpg`,
   })
   try {
     const savedCar = await car.save()
