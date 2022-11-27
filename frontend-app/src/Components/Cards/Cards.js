@@ -56,7 +56,7 @@ const Cards = () => {
                   component="img"
                   variant="outlined"
                   className="cardMedia"
-                  image={`https://api-fastcars.herokuapp.com/${car.img}`}
+                  image={`https://api-fastcars.herokuapp.com/public/${car.img}`}
                   title="Image Title"
                 />
                 <CardContent className={styles.cardContent}>
