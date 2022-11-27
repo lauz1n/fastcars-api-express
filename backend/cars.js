@@ -1,6 +1,6 @@
 const Cars = require("./src/model/Cars")
 const multer = require("multer")
-const fs = require("fs")
+const { uploadFile } = require("./s3")
 
 //DiskStorage multer
 
@@ -25,10 +25,11 @@ const create = async (req, res) => {
     imgName: req.body.imgName,
     img: `${req.file.filename}`,
   })
-  console.log(car)
   try {
+    const result = await uploadFile(req.file)
+    console.log(result)
     const savedCar = await car.save()
-    res.send({ car: car._id })
+    res.send({ imagePath: `/create/${result.Key}` })
   } catch (err) {
     res.status(400).send(err)
   }

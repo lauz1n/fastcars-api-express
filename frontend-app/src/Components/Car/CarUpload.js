@@ -37,20 +37,17 @@ const CarUpload = () => {
 
   const saveCar = async (formData) => {
     if (!params.id) {
-      const response = await fetch(
-        "https://api-fastcars.herokuapp.com/api/product/create",
-        {
-          method: "POST",
-          headers: {
-            Authorization: "auth-token " + window.localStorage.getItem("token"),
-          },
-          body: formData,
-        }
-      )
+      const response = await fetch("http://localhost:8000/api/product/create", {
+        method: "POST",
+        headers: {
+          Authorization: "auth-token " + window.localStorage.getItem("token"),
+        },
+        body: formData,
+      })
 
-      if (response.ok) {
-        window.location.reload()
-      }
+      //if (response.ok) {
+      //window.location.reload()
+      //}
 
       return
     }
