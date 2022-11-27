@@ -13,3 +13,12 @@ label {
   display: block;
 }
 
+.boxstyle { 
+  width: 810px;
+}
+
+@media screen and (max-width: 810px) {
+  .boxstyle {
+    width: auto;
+  }
+}

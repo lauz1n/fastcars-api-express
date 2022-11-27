@@ -37,17 +37,20 @@ const CarUpload = () => {
 
   const saveCar = async (formData) => {
     if (!params.id) {
-      const response = await fetch("http://localhost:8000/api/product/create", {
-        method: "POST",
-        headers: {
-          Authorization: "auth-token " + window.localStorage.getItem("token"),
-        },
-        body: formData,
-      })
+      const response = await fetch(
+        "https://api-fastcars.herokuapp.com/api/product/create",
+        {
+          method: "POST",
+          headers: {
+            Authorization: "auth-token " + window.localStorage.getItem("token"),
+          },
+          body: formData,
+        }
+      )
 
-      //if (response.ok) {
-      //window.location.reload()
-      //}
+      if (response.ok) {
+        window.location.reload()
+      }
 
       return
     }
@@ -114,7 +117,7 @@ const CarUpload = () => {
             alignItems="stretch"
             spacing={1}
           >
-            <Box sx={{ width: "900px" }}>
+            <Box className={styles.boxstyle}>
               <TextField
                 label="Nome"
                 fullWidth
@@ -166,18 +169,20 @@ const CarUpload = () => {
             justifyContent="space-between"
             alignItems="flex-end"
           >
-            <Button variant="contained" component="label" id="btn">
-              <PhotoCamera />
-              Escolha um Arquivo
-              <input
-                hidden
-                accept="image/*"
-                multiple
-                type="file"
-                name="img"
-                onChange={handleImgChange}
-              />
-            </Button>
+            {params.id ? null : (
+              <Button variant="contained" component="label" id="btn">
+                <PhotoCamera />
+                Escolha um Arquivo
+                <input
+                  hidden
+                  accept="image/*"
+                  multiple
+                  type="file"
+                  name="img"
+                  onChange={handleImgChange}
+                />
+              </Button>
+            )}
 
             <Button type="submit" variant="outlined" id="btn">
               {params.id ? "Confirmar Edição" : "Cadastrar"}

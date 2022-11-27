@@ -1,19 +1,36 @@
 const Cars = require("./src/model/Cars")
+const dotenv = require("dotenv")
 const multer = require("multer")
-const { uploadFile } = require("./s3")
+const S3 = require("aws-sdk/clients/s3")
+const multerS3 = require("multer-s3")
+const path = require("path")
+const uuid = require("uuid").v4
+dotenv.config()
 
-//DiskStorage multer
+const bucketName = process.env.AWS_BUCKET
+const bucketRegion = process.env.AWS_BUCKET_REGION
+const bucketAccessKey = process.env.AWS_ACCESS_KEY_ID
+const bucketSecretKey = process.env.AWS_SECRET_ACCESS_KEY
 
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "uploads/")
-  },
-  filename: function (req, file, cb) {
-    cb(null, Date.now() + "-" + file.originalname)
-  },
+const s3 = new S3({
+  bucketRegion,
+  bucketAccessKey,
+  bucketSecretKey,
 })
 
-const upload = multer({ storage: storage })
+const upload = multer({
+  storage: multerS3({
+    s3,
+    bucket: bucketName,
+    metadata: (req, file, cb) => {
+      cb(null, { fieldName: file.fieldname })
+    },
+    key: (req, file, cb) => {
+      const ext = path.extname(file.originalname)
+      cb(null, `${uuid()}${ext}`)
+    },
+  }),
+})
 
 //Create car func
 const create = async (req, res) => {
@@ -23,13 +40,12 @@ const create = async (req, res) => {
     model: req.body.model,
     price: req.body.price,
     imgName: req.body.imgName,
-    img: `${req.file.filename}`,
+    img: req.file.location,
   })
+  console.log(car)
   try {
-    const result = await uploadFile(req.file)
-    console.log(result)
     const savedCar = await car.save()
-    res.send({ imagePath: `/create/${result.Key}` })
+    res.send("Posted")
   } catch (err) {
     res.status(400).send(err)
   }
