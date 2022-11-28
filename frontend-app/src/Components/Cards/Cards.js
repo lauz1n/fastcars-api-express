@@ -63,7 +63,15 @@ const Cards = () => {
                   <Typography variant="h6" gutterBottom>
                     {car.name} {car.brand} {car.model}
                   </Typography>
-                  <Typography>R$ {car.price}</Typography>
+                  <Typography
+                    style={{
+                      fontWeight: "500",
+                      fontSize: "1.2rem",
+                      color: "#1976d2",
+                    }}
+                  >
+                    R$ {car.price}
+                  </Typography>
                 </CardContent>
               </Card>
             </Grid>

@@ -21,7 +21,7 @@ export default function SelectByPrice({ onChange }) {
           <InputLabel>Filtro</InputLabel>
         </div>
         <select style={{ padding: "12px" }} onChange={onChange}>
-          <option value="none" disabled>
+          <option value="" selected disabled style={{ opacity: "0.3" }}>
             Selecione um filtro
           </option>
           <option value="high">Maior preço</option>
