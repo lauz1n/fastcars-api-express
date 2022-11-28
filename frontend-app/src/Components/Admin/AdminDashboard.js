@@ -16,7 +16,7 @@ const AdminDashboard = () => {
   useEffect(() => {
     async function getCars() {
       const response = await fetch(
-        "https://api-fastcars.herokuapp.com/api/product/cars",
+        "https://fastcars-api-express.onrender.com/api/product/cars",
         {
           method: "GET",
           headers: {

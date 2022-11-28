@@ -17,7 +17,7 @@ const Car = ({ name, brand, model, price, imgName, img, id }) => {
   async function deleteCar() {
     if (window.confirm("Tem certeza que deseja deletar " + name)) {
       const response = await fetch(
-        `https://api-fastcars.herokuapp.com/api/product/cars/${id}`,
+        `https://fastcars-api-express.onrender.com/api/product/cars/${id}`,
         {
           method: "DELETE",
           headers: {

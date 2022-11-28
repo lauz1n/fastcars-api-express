@@ -24,7 +24,10 @@ const CarUpload = () => {
 
   useEffect(() => {
     if (params.id) {
-      fetch("https://api-fastcars.herokuapp.com/api/product/cars/" + params.id)
+      fetch(
+        "https://fastcars-api-express.onrender.com/api/product/cars/" +
+          params.id
+      )
         .then((response) => response.json())
         .then((data) => {
           setName(data.name)
@@ -38,7 +41,7 @@ const CarUpload = () => {
   const saveCar = async (formData) => {
     if (!params.id) {
       const response = await fetch(
-        "https://api-fastcars.herokuapp.com/api/product/create",
+        "https://fastcars-api-express.onrender.com/api/product/create",
         {
           method: "POST",
           headers: {
@@ -63,7 +66,7 @@ const CarUpload = () => {
     }
 
     const response = await fetch(
-      "https://api-fastcars.herokuapp.com/api/product/cars/" + params.id,
+      "https://fastcars-api-express.onrender.com/api/product/cars/" + params.id,
       {
         method: "PATCH",
         headers: {

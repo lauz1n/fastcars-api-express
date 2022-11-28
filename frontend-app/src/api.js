@@ -1,5 +1,6 @@
-export const API_USER_URL = "https://api-fastcars.herokuapp.com/api/user"
-export const API_CAR_URL = "https://api-fastcars.herokuapp.com/api/product"
+export const API_USER_URL = "https://fastcars-api-express.onrender.com/api/user"
+export const API_CAR_URL =
+  "https://fastcars-api-express.onrender.com/api/product"
 
 export function GET_ALL_CARS() {
   return {
