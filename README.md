@@ -25,7 +25,9 @@
 * React Router Dom (Frotend)
 * Express.js (Backend)
 * JWT (Json Web Token) (Backend)
+* BCrypt (Backend)
 * MongoDB (Database) (Backend)
+* AWS S3 (Database) (Backend)
 * Postman (Teste de Endpoints)
 
 
