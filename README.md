@@ -4,7 +4,7 @@
 
   <p align="center">
     O projeto conta com a utilização de tecnologias atuais para desenvolvimento, pensando em reutilização de Componentes no React, estruturação correta de pastas e demais vantagens.
-    Neste projeto utilizei Express.js para construção do Backend, juntamente ao JWT (Json Web Token), para validação de usuário, dando um token único a cada usuário.
+    Neste projeto utilizei Express.js para construção do Backend, juntamente ao JWT (Json Web Token), para validação de usuário, dando um token único a cada usuário. Além do JWT, utilizei o Bcrypt para encriptação das senhas, trazendo muito mais segurança ao usuário.
     O API faz integração com MongoDB, para armazenamento das informações enviadas, para conexão e criação de Models entre as partes, foi utilizado o Mongoose, o que facilita a utilização do DB. Para ganho de performance no armazenamento de imagens, utilizei o AWS S3, onde eu guardo todas as imagens dentro de um Bucket hosteado na Amazon. Todos os Endpoints foram testados durante o desenvolvimento utilizando o Postman.
     No Frontend foi utilizado Material UI para construção da parte visual, o projeto também conta com React Router Dom, fornecendo paginação na navegação do usuário. 
     As funcionalidades de Administrador estão sendo controladas através do uso do ContextAPI do React, onde passo um estado global de Login, caso a verificação conste como falsa na existência de um Token após o login, o usuário não pode acessar as rotas de Administração.
