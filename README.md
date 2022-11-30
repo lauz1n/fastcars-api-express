@@ -91,7 +91,7 @@ O website conta com funcionalidades simples, desenvolvido utilizando tecnologias
 ### Logo na primeira página, podemos ver a representação simples do que seria a vitrine.
  * Na vitrine, temos acesso ao filtro, onde os carros podem ser ordenados por valor crescente e decrescente.
 ### Na página de login, temos um formulário simples, onde o usuário deve se Identificar dando seu nome, usuário e senha.
- * Nome: Administrador, Usuário: admin, Senha: admin0550
+ * Caso você tenha vontade de testar a aplicação, entre em contato comigo.
 ### Após logado, o usuário será imediatamente navegado para a página de Dashboard, onde poderá fazer o cadastro, delete e edit de carros.
  * Para cadastrar um carro, preencher todos os campos e fazer o upload de uma imagem em formato jpg ou png. As rotas de administrador são protegidas utilizando o React Router Dom e fazendo a verificação de Token, as rotas de administrador são inacessíveis sem a validação do Token.
  * Para editar um carro, clickar no botão Editar e alterar os campos desejados.
