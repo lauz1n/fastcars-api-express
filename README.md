@@ -12,7 +12,7 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## Website vitrine com Dashboard
+## Website vitrine com Dashboard https://fastcarsapp.netlify.app/
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -30,6 +30,7 @@
 * AWS S3 (Database) (Backend)
 * Postman (Teste de Endpoints)
 
+### OBS: O servidor está hosteado em um plano free tier no Render, dando spindown no servidor de 15 em 15 minutos, a primeira requisição sempre demora a acontecer caso esses 15 minutos sejam excedidos, mas após a primeira, a aplicação funciona com muita rapidez.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
